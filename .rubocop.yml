@@ -1,0 +1,47 @@
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+
+Metrics/AbcSize:
+  Exclude:
+    - 'Rakefile'
+    - 'db/**/*.rb'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'Rakefile'
+    - 'db/**/*.rb'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'Rakefile'
+    - 'db/**/*.rb'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+  CountAsOne: ['array', 'hash', 'heredoc']
+
+Metrics/BlockLength:
+  CountComments: false # count full line comments?
+  Max: 25
+  Exclude:
+    - Rakefile'
+    - 'db/**/*.rb'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+  IgnoredMethods: ['contract', 'params', 'process', 'namespace', 'task', 'context', 'describe', 'aggregate_failures']
+  CountAsOne: ['array', 'hash', 'heredoc']
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+Rails/HttpPositionalArguments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
